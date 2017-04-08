@@ -1,0 +1,20 @@
+<h1>Todos#show</h1>
+<%#<p>Find me in app/views/todos/show.html.erb</p>%>
+  <div class="container">
+    <div class="todo_show col-lg-5">
+      <div class="clearfix row">
+        <div class="col-md-12 lead">
+          <%= @todo.name %>
+        </div>
+        <div class="col-md-8 col-xs-8">
+          <%= @todo.task_date %>
+        </div>
+        <div class="col-md-4 col-xs-4 pull-right">
+          <%= check_box_tag 'done' %>
+        </div><br>
+        <div class="col-md-12">
+          <%= link_to 'Home', todos_path %>
+        </div>
+      </div>
+    </div>
+  </div>

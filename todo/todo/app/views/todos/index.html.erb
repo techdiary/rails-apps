@@ -1,0 +1,24 @@
+<h1>Listing all Todo's</h1>
+<ul>
+    <% @todos.each do |todo|%>
+      <div class="container">
+       <div class="todo_index col-lg-10">
+        <div class="row">
+          <div class="col-md-6 lead">
+            <span class="glyphicon glyphicon-pencil">  </span><%= todo.name %>
+          </div>
+          <div class="col-md-4">
+            <%= todo.task_date %>
+          </div>
+          <div class="col-md-1">
+            <%= link_to 'Show', todo_path(todo)%>
+          </div>
+          <div class="col-md-1 btn">
+            <!-- <%= button_tag 'Done', class: 'btn btn-default' %> -->
+            <%= link_to 'Done', todo_path(todo), method: :delete, data: { confirm: "Are you sure"}, class: 'btn btn-danger' %>
+          </div>
+        </div>
+       </div>
+      </div>
+    <%end%>
+</ul>
